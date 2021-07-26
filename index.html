@@ -2,73 +2,129 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>Draggable Site</title>
+        <meta name="description" content="" />
+        <meta name="author" content="Todd Shelton" />
+        <title>Desktop Dragging Game</title>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=1, minimum-scale=1.0, maximum-scale=1.0"
+        />
+
         <link rel="stylesheet" href="css/style.css" />
     </head>
     <body>
-        <div class="mainTitle">
-            <span class="asapReg">Green</span
-            ><span class="greenText"> Sock</span>
+        <div class="content-wrapper">
+            <div class="background">
+                <div class="title"><span>GSAP Matching Game</span></div>
 
-            <span class="greenText">Draggable</span>
+                <div class="gameBoard" id="gameBoard">
+                    <div class="instruction">
+                        Drag the image below and match to the image on the
+                        right.
+                    </div>
+                    <!-- Start Draggable Images-->
+                    <!--Here are the drop outside images-->
+                    <div
+                        id="bigDirectional"
+                        class="image leftOutside firstRowTopPos dragItem"
+                    >
+                        <img src="image/Directional_Blue.png" />
+                    </div>
+                    <div
+                        id="cloudDownload"
+                        class="image leftOutside secondRowTopPos dragItem"
+                    >
+                        <img src="image/Cloud_Download_Blue.png" />
+                    </div>
+                    <div
+                        id="bigCursor"
+                        class="image leftOutside thirdRowTopPos dragItem"
+                    >
+                        <img src="image/Cursor_Blue.png" />
+                    </div>
+
+                    <!--Here are the drop inside images-->
+                    <div
+                        id="cloudUpload"
+                        class="image leftInside firstRowTopPos dragItem"
+                    >
+                        <img src="image/Cloud_Upload_Blue.png" />
+                    </div>
+                    <div
+                        id="cloudTransfer"
+                        class="image leftInside secondRowTopPos dragItem"
+                    >
+                        <img src="image/Cloud_Data_Transfer_Blue.png" />
+                    </div>
+                    <div
+                        id="cloud"
+                        class="image leftInside thirdRowTopPos dragItem"
+                    >
+                        <img src="image/Cloud_Blue.png" />
+                    </div>
+
+                    <!--End Draggable Images-->
+
+                    <!--Start Target Images-->
+                    <div
+                        id="cloudDrop"
+                        class="image rightOutside firstRowTopPos target"
+                    >
+                        <img src="image/Cloud_Blue_Stroke.png" />
+                    </div>
+                    <div
+                        id="cloudTransferDrop"
+                        class="image rightOutside secondRowTopPos target"
+                    >
+                        <img src="image/Cloud_Data_Transfer_Blue_Stroke.png" />
+                    </div>
+                    <div
+                        id="cloudUploadDrop"
+                        class="image rightOutside thirdRowTopPos target"
+                    >
+                        <img src="image/Cloud_Upload_Blue_Stroke.png" />
+                    </div>
+
+                    <!--Here are the drop inside images-->
+                    <div
+                        id="bigCursorDrop"
+                        class="image rightInside firstRowTopPos target"
+                    >
+                        <img src="image/Cursor_Blue_Stroke.png" />
+                    </div>
+                    <div
+                        id="cloudDownloadDrop"
+                        class="image rightInside secondRowTopPos target"
+                    >
+                        <img src="image/Cloud_Download_Blue_Stroke.png" />
+                    </div>
+                    <div
+                        id="bigDirectionalDrop"
+                        class="image rightInside thirdRowTopPos target"
+                    >
+                        <img src="image/Directional_Blue_Stroke.png" />
+                    </div>
+
+                    <!--End Target Images-->
+                </div>
+
+                <div class="modal">
+                    <span>You Win!</span>
+                </div>
+            </div>
         </div>
 
-        <!--Grid that holds tools and drop areas-->
-        <div class="container-wrapper">
-            <section class="gridContainer" id="gridContainer">
-                <!--Grid Top Row-->
-                <section class="gridRows">
-                    <section class="gridBox gridBoxTopLeft">
-                        <section class="moveAble gridBoxImage">
-                            <img src="images/gsap-superhero.svg" />
-                        </section>
-                    </section>
-                    <section class="gridBox"></section>
-                    <section class="gridBox"></section>
-                    <section class="gridBox gridBoxTopRight"></section>
-                </section>
+        <div class="tryAgain">
+            <span>Try Again</span>
+        </div>
 
-                <!--Grid Middle Top Row-->
-                <section class="gridRows">
-                    <section class="gridBox">
-                        <section class="moveAble gridBoxImage">
-                            <img src="images/leaf.png" />
-                        </section>
-                    </section>
-                    <section class="gridBox"></section>
-                    <section class="gridBox"></section>
-                    <section class="gridBox"></section>
-                </section>
-
-                <!--Grid Middle Bottom Row-->
-                <section class="gridRows">
-                    <section class="gridBox">
-                        <section class="moveAble gridBoxImage">
-                            <img src="images/weight-lifter.svg" />
-                        </section>
-                    </section>
-                    <section class="gridBox"></section>
-                    <section class="gridBox"></section>
-                    <section class="gridBox"></section>
-                </section>
-
-                <!--Grid Bottom Row-->
-                <section class="gridRows">
-                    <section class="gridBox gridBoxBottomLeft">
-                        <section class="moveAble gridBoxImage">
-                            <img src="images/tool-box.png" />
-                        </section>
-                    </section>
-                    <section class="gridBox"></section>
-                    <section class="gridBox"></section>
-                    <section class="gridBox gridBoxBottomRight"></section>
-                </section>
-            </section>
+        <div class="correct">
+            <span>Correct</span>
         </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+        <script src="./vendor/SplitText3.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/Draggable.min.js"></script>
-
         <script src="js/app.js"></script>
     </body>
 </html>

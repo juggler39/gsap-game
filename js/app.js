@@ -1,18 +1,31 @@
 document.addEventListener('DOMContentLoaded', function () {
+    initTitle();
     init();
 });
-gridWidth = 200;
-gridHeight = 100;
 
-function init() {
-    const gridContainer = document.getElementById('gridContainer');
-    Draggable.create('.moveAble', {
-        bounds: gridContainer,
-        edgeResistance: 0.75,
-        type: 'rotation',
-        cursor: 'pointer',
-        type: 'x, y',
-        cursor: 'grab',
-        activeCursor: 'grabbing',
-    });
+const titleText = new SplitText('.title');
+let numWords = titleText.chars.length;
+const gameContainer = document.getElementById('gameBoard');
+const dropTargets = document.querySelectorAll('.target');
+const totalTargets = 6;
+let totalHit = 0;
+
+const tl = gsap.timeline({});
+
+function init() {}
+
+function initTitle() {
+    for (let i = 0; i < numWords; i++) {
+        tl.from(
+            titleText.chars[i],
+            {
+                duration: 0.5,
+                opacity: 0,
+                x: -500,
+                transformOrigin: '0 50%',
+                ease: 'back.out',
+            },
+            Math.random()
+        );
+    }
 }
