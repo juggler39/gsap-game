@@ -42,6 +42,7 @@ body {
 }
 
 .background .title {
+  font-weight: bold;
   position: relative;
   align-self: center;
   font-size: 3em;
